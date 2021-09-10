@@ -1,0 +1,26 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+//최소, 최대
+public class Q_10818 {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int a = sc.nextInt();
+        int[] arr = new int[a];
+        int max = -1000000;
+        int min = 100000;
+
+        for(int i=0; i<arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        Arrays.sort(arr);
+
+        System.out.println(arr[0] + " " + arr[a-1]);
+    }
+
+}
+
