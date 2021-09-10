@@ -10,8 +10,6 @@ public class Q_10818 {
 
         int a = sc.nextInt();
         int[] arr = new int[a];
-        int max = -1000000;
-        int min = 100000;
 
         for(int i=0; i<arr.length; i++) {
             arr[i] = sc.nextInt();
