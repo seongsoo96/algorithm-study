@@ -2,8 +2,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//숫자의 개수(2577)
-public class Main {
+//숫자의 개수
+public class Q_2577 {
 
     public static void main(String[] args) throws IOException {
 
