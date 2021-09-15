@@ -36,6 +36,7 @@ public class Q_3052 {
             }
         }
         System.out.println(cnt);
+
     }
 
 }
