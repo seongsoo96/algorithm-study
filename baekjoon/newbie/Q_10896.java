@@ -17,7 +17,6 @@ public class Q_10896 {
         System.out.println(a / b);
         System.out.println(a % b);
 
-
     }
 
 }
