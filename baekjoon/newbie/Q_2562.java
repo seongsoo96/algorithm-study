@@ -1,10 +1,9 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 //최댓값
-public class Main {
+public class Q_2562 {
 
     public static void main(String[] args) throws IOException {
 
