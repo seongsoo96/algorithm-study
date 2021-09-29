@@ -9,7 +9,7 @@ public class Q_11654 {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int ascii = br.readLine().charAt(0);
+        int ascii=br.readLine().charAt(0);
 
         System.out.println(ascii);
 
