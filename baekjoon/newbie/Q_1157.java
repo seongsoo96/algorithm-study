@@ -38,7 +38,7 @@ public class Q_1157 {
                 }
             }
         }
-        int[] clone = cnt.clone();
+        int[] clone = cnt.clone();  //깊은 복사
 
         int temp = 0;
         int idx = 0;
