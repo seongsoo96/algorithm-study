@@ -9,6 +9,7 @@ public class Q_1712 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String[] str = br.readLine().split(" ");
+
         int A = Integer.parseInt(str[0]);
         int B = Integer.parseInt(str[1]);
         int C = Integer.parseInt(str[2]);
