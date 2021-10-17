@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 //달팽이는 올라가고 싶다(2869)
 public class Q_2869 {
@@ -7,29 +8,21 @@ public class Q_2869 {
     public static void main(String[] args) throws Exception  {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        String[] str = br.readLine().split(" ");
-        int A = Integer.parseInt(str[0]);
-        int B = Integer.parseInt(str[1]);
-        int V = Integer.parseInt(str[2]);
-        int day = 1;
-        int meter = 0;
 
-        while(meter < V) {
-            meter += A;
-            if(meter >= V) {
-                System.out.println(day);
-                break;
-            } else {
-                meter -= B;
-                day++;
-            }
+        int A = Integer.parseInt(st.nextToken()); // 낮에 올라가는 높이
+        int B = Integer.parseInt(st.nextToken()); // 밤에 미끄러지는 높이
+        int V = Integer.parseInt(st.nextToken()); // 정상 높이
+
+        int day = (V - B) / (A - B); //-> V-B(꼭대기에 올라가면 더이상 미끄러지지 않는다.)
+        if((V - B) % (A - B) != 0){
+            day++;
         }
+        System.out.println(day);
 
     }
 }
-//답은 맞는데 시간초과 떠서 당황... 좀 더 연구해봐야 할 듯. 아마 반복문이 문제일듯.
-//토크나이저도 생각해봐야함.
 
 /*
     땅 위에 달팽이가 있다. 이 달팽이는 높이가 V미터인 나무 막대를 올라갈 것이다.
