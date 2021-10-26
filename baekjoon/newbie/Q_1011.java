@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 //Fly me to the Alpha Centauri(1011)
 public class Q_1011 {
@@ -12,74 +13,31 @@ public class Q_1011 {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int T = Integer.parseInt(br.readLine());
-        for(int i=0; i<T; i++) {
-            String[] str = br.readLine().split(" ");
-            int x = Integer.parseInt(str[0]);
-            int y = Integer.parseInt(str[1]);
-            int distance = y-x;
-            int cnt = 3;
-            int min = 1;
-            int ans = 3;
 
-            if(i < T-1) {
-                if(distance == 1) {
-                    bw.write(1 + "\n");
-                } else if(distance == 2) {
-                    bw.write(2 + "\n");
-                } else {
-                    while(cnt < distance) {
-                        int j=0;
-                        min++;
-                        for(j=0; j<2; j++) {
-                            int k=0;
-                            for(k=0; k<min; k++) {
-                                if(cnt == distance) {
-                                    break;
-                                }
-                                cnt++;
-                            }
-                            if(cnt == distance) {
-                                if(k==min) {
-                                    ans++;
-                                }
-                                break;
-                            }
-                            ans++;
-                        }
-                    }
-                    bw.write(String.valueOf(ans + "\n"));
-                }
+        for(int i=0; i<T; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+
+            int x = Integer.parseInt(st.nextToken());
+            int y = Integer.parseInt(st.nextToken());
+
+            int distance = y - x; //거리
+            int cnt = 0; //카운트
+
+            int max = (int)Math.sqrt(distance); //제곱근 구하기 (소수점 제외)
+
+            if(max == Math.sqrt(distance)) { //거리의 제곱근이 max와 같으면
+                cnt = max * 2 - 1;
+            } else if(distance <= max * max + max) {
+                cnt = max * 2;
             } else {
-                if(distance == 1) {
-                    bw.write("1");
-                } else if(distance == 2) {
-                    bw.write("2");
-                } else {
-                    while(cnt < distance) {
-                        int j=0;
-                        min++;
-                        for(j=0; j<2; j++) {
-                            int k=0;
-                            for(k=0; k<min; k++) {
-                                if(cnt == distance) {
-                                    break;
-                                }
-                                cnt++;
-                            }
-                            if(cnt == distance) {
-                                if(k==min) {
-                                    ans++;
-                                }
-                                break;
-                            }
-                            ans++;
-                        }
-                    }
-                    bw.write(String.valueOf(ans));
-                }
+                cnt = max * 2 + 1;
             }
+
+            bw.write(cnt + "\n");
         }
         bw.flush();
+        bw.close();
+        br.close();
     }
 }
 
