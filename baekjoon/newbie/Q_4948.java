@@ -8,6 +8,7 @@ public class Q_4948 {
 
     public static void main(String[] args) throws Exception  {
 
+        //에라토스테네스의 체 알고리즘 이용
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
@@ -16,25 +17,55 @@ public class Q_4948 {
             if(n == 0) {
                 break;
             }
-            int primeCnt = 0;
-            for(int i=n+1; i<=2*n; i++) {
-                int cnt = 0;
-                if(i == 1) {
+            boolean[] check = new boolean[2*n+1]; //기본값: false
+            check[0] = check[1] = true; //<-소수 아닐 때 true, 소수일 때 false
+            for(int i=2; i<=2*n; i++) {
+                if(check[i] == true) {
                     continue;
-                } else {
-                    for(int j=1; j<i+1; j++) {
-                        if(i%j == 0) {
-                            cnt++;
-                        }
-                    }
-                    if(cnt == 2) {
-                        primeCnt++;
-                    }
+                }
+                for(int j=i+i; j<=2*n; j=j+i) {
+                    check[j] = true;
                 }
             }
-            bw.write(primeCnt + "\n");
+            int cnt = 0;
+            for(int i=n+1; i<=2*n; i++) {
+                if(check[i] == false) {
+                    cnt++;
+                }
+            }
+            bw.write(cnt + "\n");
         }
         bw.flush();
+        bw.close();
+
+        //시간 초과
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//
+//        while(true) {
+//            int n = Integer.parseInt(br.readLine());
+//            if(n == 0) {
+//                break;
+//            }
+//            int primeCnt = 0;
+//            for(int i=n+1; i<=2*n; i++) {
+//                int cnt = 0;
+//                if(i == 1) {
+//                    continue;
+//                } else {
+//                    for(int j=1; j<i+1; j++) {
+//                        if(i%j == 0) {
+//                            cnt++;
+//                        }
+//                    }
+//                    if(cnt == 2) {
+//                        primeCnt++;
+//                    }
+//                }
+//            }
+//            bw.write(primeCnt + "\n");
+//        }
+//        bw.flush();
     }
 }
 
