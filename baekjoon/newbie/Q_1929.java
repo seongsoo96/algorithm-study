@@ -1,4 +1,3 @@
-import java.beans.beancontext.BeanContext;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -17,24 +16,24 @@ public class Q_1929 {
         int m = Integer.parseInt(st.nextToken());
         int n = Integer.parseInt(st.nextToken());
 
-        boolean[] check = new boolean[n+1];
+        boolean[] check = new boolean[n+1]; //소수인지 아닌지 판별용 배열 선언 (0~n까지)
 
-        check[0] = check[1] = true;
+        check[0] = check[1] = true;         //소수 아닐 때 true, 소수일 때 false
 
-        for(int i=2; i<=n; i++) {
-            if(check[i] == true) {
+        for(int i=2; i<=n; i++) {           //2~n까지 반복
+            if(check[i] == true) {          //true이면 소수가 아님. continue;
                 continue;
             }
-            for(int j=i+i; j<=n; j=j+i) {
+            for(int j=i+i; j<=n; j=j+i) {   //각 소수의 배수에 true를 대입.
                 check[j] = true;
             }
         }
-        for(int i=m; i<=n; i++) {
-            if(check[i] == false) {
-                bw.write(i + "\n");
+        for(int i=m; i<=n; i++) {           //m~n까지
+            if(check[i] == false) {         //check[i]가 소수일 때
+                bw.write(i + "\n");     //bw.write에 i 출력
             }
         }
-        bw.flush();
+        bw.flush();     //bw에 있는 데이터 flush.
         bw.close();
 
         //시간 초과 풀이
