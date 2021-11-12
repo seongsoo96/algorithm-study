@@ -11,16 +11,13 @@ public class Q_10430 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         StringBuilder sb = new StringBuilder();
-
         int a = Integer.parseInt(st.nextToken());
         int b = Integer.parseInt(st.nextToken());
         int c = Integer.parseInt(st.nextToken());
-
         sb.append((a+b)%c + "\n");
         sb.append(((a%c) + (b%c))%c + "\n");
         sb.append(((a*b)%c + "\n"));
         sb.append(((a%c) * (b%c))%c);
-
         System.out.println(sb);
 
     }
