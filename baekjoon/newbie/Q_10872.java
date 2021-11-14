@@ -11,14 +11,10 @@ public class Q_10872 {
 
         int n = Integer.parseInt(br.readLine());
         int ans = 1;
-        if(n == 0) {
-            System.out.println(ans);
-        } else {
-            for(int i=1; i<=n; i++) {
-                ans *= i;
-            }
-            System.out.println(ans);
+        for(int i=1; i<=n; i++) {
+            ans *= i;
         }
+        System.out.println(ans);
     }
 }
 /*
