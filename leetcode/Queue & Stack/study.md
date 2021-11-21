@@ -1,6 +1,6 @@
-<h1>Introduction</h1>
+###Introduction
 
-<p>
+
     We may access a random element by index in Array.
     However, we might want to restrict the processing order in some cases.
 
@@ -10,11 +10,9 @@
 
     We go through the definition, implementation and built-in functions for each data structure.
     Then, we focus more on the practical applications of these two data structures.
-</p>
 
-<h1>Queue: Frist-in-frist-out Data Structure(FIFO)</h1>
+###Queue: Frist-in-frist-out Data Structure(FIFO)
 
-<p>
     In this chapter, we will first introduce First-in-first-out (FIFO)
     and how it works in a queue.
-</p>
+
