@@ -58,6 +58,125 @@ A more efficient way is to use a circular queue. Specifically, we may use a fixe
 and two pointers to indicate the starting position and the ending position.
 And the goal is to reuse the wasted storage we mentioned previously.
 
+## Circular Queue - Implementation
+
+In a circular queue, we use an array and two pointers, head and tail.
+head indicates the start position of the queue while tail indicates the ending position of the queue.
+
+Here we provide the code for your reference:
+
+    class MyCircularQueue {
+
+        private int[] data;
+        private int head;
+        private int tail;
+        private int size;
+    
+        /** Initialize your data structure here. Set the size of the queue to be k. */
+        public MyCircularQueue(int k) {
+            data = new int[k];
+            head = -1;
+            tail = -1;
+            size = k;
+        }
+        
+        /** Insert an element into the circular queue. Return true if the operation is successful. */
+        public boolean enQueue(int value) {
+            if (isFull() == true) {
+                return false;
+            }
+            if (isEmpty() == true) {
+                head = 0;
+            }
+            tail = (tail + 1) % size;
+            data[tail] = value;
+            return true;
+        }
+        
+        /** Delete an element from the circular queue. Return true if the operation is successful. */
+        public boolean deQueue() {
+            if (isEmpty() == true) {
+                return false;
+            }
+            if (head == tail) {
+                head = -1;
+                tail = -1;
+                return true;
+            }
+            head = (head + 1) % size;
+            return true;
+        }
+        
+        /** Get the front item from the queue. */
+        public int Front() {
+            if (isEmpty() == true) {
+                return -1;
+            }
+            return data[head];
+        }
+        
+        /** Get the last item from the queue. */
+        public int Rear() {
+            if (isEmpty() == true) {
+                return -1;
+            }
+            return data[tail];
+        }
+        
+        /** Checks whether the circular queue is empty or not. */
+        public boolean isEmpty() {
+            return head == -1;
+        }
+        
+        /** Checks whether the circular queue is full or not. */
+        public boolean isFull() {
+            return ((tail + 1) % size) == head;
+        }
+    }
+
+    /**
+        Your MyCircularQueue object will be instantiated and called as such:
+        MyCircularQueue obj = new MyCircularQueue(k);
+        boolean param_1 = obj.enQueue(value);
+        boolean param_2 = obj.deQueue();
+        int param_3 = obj.Front();
+        int param_4 = obj.Rear();
+        boolean param_5 = obj.isEmpty();
+        boolean param_6 = obj.isFull();
+    */
+
+## Queue - Usage
+
+Most popular languages provide built-in Queue library so you don't have tp reomvemt the wheel.
+
+As mentioned before, the queue has two important operations, enqueue and dequeue.
+Besides, we should be able to get the first element in a quere since the first element should be processed first.
+
+Below are some examples of using the built-in Queue library and its common operations:
+
+
+    // "static void main" must be defined in a public class.
+    public class Main {
+        public static void main(String[] args) {
+        // 1. Initialize a queue.
+        Queue<Integer> q = new LinkedList();
+        // 2. Get the first element - return null if queue is empty.
+        System.out.println("The first element is: " + q.peek());
+        // 3. Push new element.
+        q.offer(5);
+        q.offer(13);
+        q.offer(8);
+        q.offer(6);
+        // 4. Pop an element.
+        q.poll();
+        // 5. Get the first element.
+        System.out.println("The first element is: " + q.peek());
+        // 7. Get the size of the queue.
+        System.out.println("The size is: " + q.size());
+        }
+    }
+We provide exercise after this article to help you familiarize with these operations.
+And remember when you want to process the elements in order, using a queue might be a good choice.
 
 
 [comment]: <> (//이미지 사용 용도)
