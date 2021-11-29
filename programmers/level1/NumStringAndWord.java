@@ -1,8 +1,7 @@
 //https://programmers.co.kr/learn/courses/30/lessons/81301
 
-package level1;
-
 class NumStringAndWord {
+
     public int solution(String s) {
 
         String[] num = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};

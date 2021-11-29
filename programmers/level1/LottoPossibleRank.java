@@ -1,8 +1,7 @@
 //https://programmers.co.kr/learn/courses/30/lessons/77484
 
-package level1;
+class LottoPossibleRank {
 
-class Solution {
     public int[] solution(int[] lottos, int[] win_nums) {
         int[] answer = new int[2];
         int cnt = 0;
