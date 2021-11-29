@@ -1,5 +1,5 @@
 //https://programmers.co.kr/learn/courses/30/lessons/67256
-
+//키패드 누르기
 class pressKeypad {
 
     public String solution(int[] numbers, String hand) {
@@ -57,4 +57,5 @@ class pressKeypad {
 
         return position;
     }
+
 }
