@@ -1,5 +1,5 @@
 //https://programmers.co.kr/learn/courses/30/lessons/70128
-//내
+//내적
 class DotProduct {
     public int solution(int[] a, int[] b) {
         int answer = 0;
