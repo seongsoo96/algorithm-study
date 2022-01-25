@@ -7,7 +7,6 @@ public class Q_1152 {
     public static void main(String[] args) throws Exception  {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         String[] word = br.readLine().split(" ");
 
         if(word.length>0 && word[0].length() == 0) {
