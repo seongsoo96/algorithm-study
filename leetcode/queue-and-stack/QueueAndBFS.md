@@ -197,4 +197,4 @@ return the minimum total number of turns required to open the lock, or -1 if it 
 - deadends[i].length == 4
 - target.length == 4
 - target will not be in the list deadends.
-- target and deadends[i] consist of digits only.
+- target and deadends[i] consist of digits only. 
